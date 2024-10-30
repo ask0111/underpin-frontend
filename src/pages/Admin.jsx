@@ -58,7 +58,6 @@ const AdminDashboard = ({playerId}) => {
   const handleAddUser = async () => {
     if (newUser.name && newUser.email && newUser.password) {
       try {
-        // Make POST request to backend API to add the new user
         const response = await fetch(
           `${process.env.REACT_APP_BACKEND_URL}/api/users`,
           {
@@ -72,7 +71,7 @@ const AdminDashboard = ({playerId}) => {
         );
 
         if (response.ok) {
-          const data = await response.json(); // Parse the JSON response
+          const data = await response.json(); 
           alert("User added successfully!");
           fetchUsers()
           setNewUser({ name: "", email: "", password: "" });
