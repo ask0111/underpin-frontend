@@ -15,9 +15,9 @@ export const isAuthenticated = async () => {
     });
     if (response.ok) {
       const userId = await response.json();
-      return userId.user.userId; // Token is valid
+      return userId.user.userId; 
     } else {
-      Cookies.remove("token"); // Remove invalid token
+      Cookies.remove("token"); 
       return false;
     }
   } catch (error) {
@@ -39,9 +39,9 @@ export const isAdminAuthenticated = async () => {
         });
         
     if (response.ok) {
-      return true; // Token is valid
+      return true; 
     } else {
-      Cookies.remove("token"); // Remove invalid token
+      Cookies.remove("token");
       return false;
     }
   } catch (error) {
