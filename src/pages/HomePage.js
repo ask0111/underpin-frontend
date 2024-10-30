@@ -15,7 +15,6 @@ const HomePage = ({playerId}) => {
   const token = Cookies.get("token");
 
   
-  // Handle click
   const handleBananaClick = () => {
     // setClickCount((prevCount) => prevCount + 1);
     socket.emit('clickBanana', playerId); 
